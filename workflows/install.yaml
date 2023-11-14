@@ -1267,6 +1267,7 @@ spec:
       containers:
       - args:
         - "--auth-mode=server"
+        # - "--secure=false"
         - server
         env: []
         image: quay.io/argoproj/argocli:v3.5.1
