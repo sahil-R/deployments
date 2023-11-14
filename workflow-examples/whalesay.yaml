@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
   # generateName: hello-world-  # Name of this Workflow
-  Name: hello-world
+  name: hello-world
 spec:
   entrypoint: whalesay        # Defines "whalesay" as the "main" template
   templates:
