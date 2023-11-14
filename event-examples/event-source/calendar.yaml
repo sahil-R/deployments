@@ -7,5 +7,3 @@ spec:
     example-with-interval:
       # creates an event every 10 seconds
       interval: 10s
-      metadata:
-        hello: world
