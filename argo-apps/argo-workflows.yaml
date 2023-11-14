@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: workflows
+  namespace: argo
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/sahil-R/deployments.git'
+    path: workflows
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argo
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
