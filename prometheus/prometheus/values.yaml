@@ -641,7 +641,7 @@ server:
     ## of the data.
     statefulsetReplica:
       enabled: false
-      replica: 2
+      replica: 1
 
   ## Prometheus server pod termination grace period
   ##
