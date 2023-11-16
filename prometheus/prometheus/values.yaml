@@ -693,9 +693,9 @@ serverFiles:
         static_configs:
           - targets:
             - localhost:9090
-      - job_name: 'kube-state-metrics'
-        static_configs:
-          - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
+      # - job_name: 'kube-state-metrics'
+      #   static_configs:
+      #     - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
 
       # A scrape configuration for running Prometheus on a Kubernetes cluster.
       # This uses separate scrape configs for cluster components (i.e. API server, node)
