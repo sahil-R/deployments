@@ -1,0 +1,13 @@
+project: default
+source:
+  repoURL: 'https://github.com/sahil-R/deployments.git'
+  path: event-examples/rbac
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: argo-events
+syncPolicy:
+  automated: {}
+  syncOptions:
+    - CreateNamespace=true
+
