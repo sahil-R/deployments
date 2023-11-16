@@ -528,8 +528,8 @@ server:
     ## and deleting statefulset, respectively. Requires 1.27.0+.
     ## Ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#persistentvolumeclaim-retention
     ##
-    pvcDeleteOnStsDelete: false
-    pvcDeleteOnStsScale: false
+    pvcDeleteOnStsDelete: true
+    pvcDeleteOnStsScale: true
 
   ## Prometheus server readiness and liveness probe initial delay and timeout
   ## Ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
@@ -632,7 +632,7 @@ server:
 
     ## Enable gRPC port on service to allow auto discovery with thanos-querier
     gRPC:
-      enabled: true
+      enabled: false
       servicePort: 10901
       # nodePort: 10901
 
@@ -640,7 +640,7 @@ server:
     ## service to connect to a specific replica to have a consistent view
     ## of the data.
     statefulsetReplica:
-      enabled: true
+      enabled: false
       replica: 2
 
   ## Prometheus server pod termination grace period
