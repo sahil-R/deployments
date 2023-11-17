@@ -1230,6 +1230,19 @@ kind: ConfigMap
 metadata:
   name: workflow-controller-configmap
   namespace: argo
+  persistence:
+    archive: true
+    mysql:
+      host: mysql-primary.argocd.svc.cluster.local
+      port: 3306
+      database: my_database
+      tableName: argo_workflows
+      userNameSecret:
+        name: argo-postgres-config
+        key: username
+      passwordSecret:
+        name: argo-postgres-config
+        key: password
 ---
 apiVersion: v1
 kind: Service
