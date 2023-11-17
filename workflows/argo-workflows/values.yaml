@@ -94,10 +94,10 @@ controller:
   initialDelay:
   # -- deploymentAnnotations is an optional map of annotations to be applied to the controller Deployment
   deploymentAnnotations:
-    prometheus.io/scrape-slow: true
+    prometheus.io/scrape-slow: "true"
   # -- podAnnotations is an optional map of annotations to be applied to the controller Pods
   podAnnotations:
-    prometheus.io/scrape-slow: true
+    prometheus.io/scrape-slow: "true"
   # -- Optional labels to add to the controller pods
   podLabels: {}
   # -- SecurityContext to set on the controller pods
@@ -409,10 +409,10 @@ server:
     tag: ""
   # -- optional map of annotations to be applied to the ui Deployment
   deploymentAnnotations:
-    prometheus.io/scrape-slow: true
+    prometheus.io/scrape-slow: "true"
   # -- optional map of annotations to be applied to the ui Pods
   podAnnotations:
-    prometheus.io/scrape-slow: true
+    prometheus.io/scrape-slow: "true"
   # -- Optional labels to add to the UI pods
   podLabels: {}
   # -- SecurityContext to set on the server pods
@@ -451,7 +451,7 @@ server:
 
   # -- Annotations to be applied to the UI Service
   serviceAnnotations:
-    prometheus.io/scrape-slow: true
+    prometheus.io/scrape-slow: "true"
   # -- Optional labels to add to the UI Service
   serviceLabels: {}
   # -- Static IP address to assign to loadBalancer service type `LoadBalancer`
