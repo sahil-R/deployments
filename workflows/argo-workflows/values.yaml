@@ -98,7 +98,7 @@ controller:
   # -- podAnnotations is an optional map of annotations to be applied to the controller Pods
   podAnnotations:
     prometheus.io/scrape-slow: "true"
-    prometheus.io/port: 2746
+    prometheus.io/port: '2746'
     prometheus.io/scheme: 'https'
   # -- Optional labels to add to the controller pods
   podLabels: {}
