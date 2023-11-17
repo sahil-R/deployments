@@ -109,7 +109,7 @@ controller:
     # -- Path is the path where metrics are emitted. Must start with a "/".
     path: /metrics
     # -- Port is the port where metrics are emitted
-    port: 9090
+    port: 2746
     # -- How often custom metrics are cleared from memory
     metricsTTL: ""
     # -- Flag that instructs prometheus to ignore metric emission errors.
