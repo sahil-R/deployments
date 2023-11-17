@@ -1131,7 +1131,7 @@ imageRenderer:
     ##
     enabled: true
     path: /metrics
-    namespace: prometheus
+    namespace: argocd
     labels: {}
     interval: 1m
     scheme: http
