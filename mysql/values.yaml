@@ -527,6 +527,7 @@ primary:
     ## @param primary.service.annotations Additional custom annotations for MySQL primary service
     ##
     annotations:
+      prometheus.io/scrape-slow: "true"
       prometheus.io/scheme: 'tcp'
     ## @param primary.service.sessionAffinity Session Affinity for Kubernetes service, can be "None" or "ClientIP"
     ## If "ClientIP", consecutive client requests will be directed to the same Pod
