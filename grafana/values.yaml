@@ -724,7 +724,6 @@ grafana.ini:
   database:
     type: mysql
     host: mysql-primary.argocd.svc.cluster.local
-    createDatabase: true
     user: root
     password: root
   paths:
