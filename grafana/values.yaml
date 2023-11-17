@@ -392,7 +392,7 @@ adminPassword: "strongpassword"
 # admin:
 #   # ## Name of the secret. Can be templated.
 #   existingSecret: "grafana-admin"
-#   # userKey: admin-user
+#   userKey: admin-user
 #   passwordKey: admin-password
 
 ## Define command to be executed at startup by grafana container
