@@ -149,7 +149,7 @@ controller:
     mysql:
       host: mysql-primary.argocd.svc.cluster.local
       port: 3306
-      database: argo
+      database: my_database
       tableName: argo_workflows
       userNameSecret:
         name: argo-mysql-config
