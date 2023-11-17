@@ -724,8 +724,8 @@ grafana.ini:
   database:
     type: mysql
     host: mysql-primary.argocd.svc.cluster.local
-    user: test
-    password: test
+    user: root
+    password: root
   paths:
     data: /var/lib/grafana/
     logs: /var/log/grafana
