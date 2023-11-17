@@ -41,7 +41,7 @@ clusterDomain: cluster.local
 ## @param commonAnnotations Common annotations to add to all MySQL resources (sub-charts are not considered). Evaluated as a template
 ##
 commonAnnotations:
-  prometheus.io/scrape-slow: true
+  prometheus.io/scrape-slow: "true"
 ## @param commonLabels Common labels to add to all MySQL resources (sub-charts are not considered). Evaluated as a template
 ##
 commonLabels: {}
