@@ -406,7 +406,7 @@ admin:
 ## Needed if using `hashicorp/envconsul` to manage secrets
 ## By default no arguments are set
 args:
-- "--debug"
+# - "--debug"
 # - "secret/grafana"
 # - "./grafana"
 
