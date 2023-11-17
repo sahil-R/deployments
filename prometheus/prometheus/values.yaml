@@ -854,7 +854,7 @@ serverFiles:
             action: keep
             regex: true
           - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape_slow]
-            action: drop
+            action: keep
             regex: true
           - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scheme]
             action: replace
@@ -1005,7 +1005,7 @@ serverFiles:
             action: keep
             regex: true
           - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape_slow]
-            action: drop
+            action: keep
             regex: true
           - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scheme]
             action: replace
@@ -1038,7 +1038,7 @@ serverFiles:
             target_label: pod
           - source_labels: [__meta_kubernetes_pod_phase]
             regex: Pending|Succeeded|Failed|Completed
-            action: drop
+            action: keep
           - source_labels: [__meta_kubernetes_pod_node_name]
             action: replace
             target_label: node
@@ -1098,7 +1098,7 @@ serverFiles:
             target_label: pod
           - source_labels: [__meta_kubernetes_pod_phase]
             regex: Pending|Succeeded|Failed|Completed
-            action: drop
+            action: keep
           - source_labels: [__meta_kubernetes_pod_node_name]
             action: replace
             target_label: node
