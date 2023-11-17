@@ -41,7 +41,7 @@ clusterDomain: cluster.local
 ## @param commonAnnotations Common annotations to add to all MySQL resources (sub-charts are not considered). Evaluated as a template
 ##
 commonAnnotations:
-  prometheus.io/scrape-slow: "true"
+  prometheus.io/scrape: "true"
 ## @param commonLabels Common labels to add to all MySQL resources (sub-charts are not considered). Evaluated as a template
 ##
 commonLabels: {}
@@ -527,8 +527,8 @@ primary:
     ## @param primary.service.annotations Additional custom annotations for MySQL primary service
     ##
     annotations:
-      prometheus.io/scrape-slow: "true"
-      prometheus.io/scheme: 'tcp'
+      prometheus.io/scrape: "true"
+      prometheus.io/scheme: 'http'
     ## @param primary.service.sessionAffinity Session Affinity for Kubernetes service, can be "None" or "ClientIP"
     ## If "ClientIP", consecutive client requests will be directed to the same Pod
     ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
