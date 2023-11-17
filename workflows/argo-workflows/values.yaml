@@ -145,7 +145,7 @@ controller:
   # # save the entire workflow into etcd and DB
   # nodeStatusOffLoad: false
   # # enable archiving of old workflows
-    archive: false
+    archive: true
     mysql:
       host: mysql-primary.argocd.svc.cluster.local
       port: 3306
@@ -709,7 +709,7 @@ extraObjects: []
 useStaticCredentials: true
 artifactRepository:
   # -- Archive the main container logs as an artifact
-  archiveLogs: false
+  archiveLogs: true
   # -- Store artifact in a S3-compliant object store
   # @default -- See [values.yaml]
   s3: {}
