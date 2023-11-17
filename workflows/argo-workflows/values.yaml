@@ -93,9 +93,11 @@ controller:
   # -- Resolves ongoing, uncommon AWS EKS bug: https://github.com/argoproj/argo-workflows/pull/4224
   initialDelay:
   # -- deploymentAnnotations is an optional map of annotations to be applied to the controller Deployment
-  deploymentAnnotations: {}
+  deploymentAnnotations:
+    prometheus.io/scrape-slow: true
   # -- podAnnotations is an optional map of annotations to be applied to the controller Pods
-  podAnnotations: {}
+  podAnnotations:
+    prometheus.io/scrape-slow: true
   # -- Optional labels to add to the controller pods
   podLabels: {}
   # -- SecurityContext to set on the controller pods
@@ -406,9 +408,11 @@ server:
     # -- Image tag for the Argo Workflows server. Defaults to `.Values.images.tag`.
     tag: ""
   # -- optional map of annotations to be applied to the ui Deployment
-  deploymentAnnotations: {}
+  deploymentAnnotations:
+    prometheus.io/scrape-slow: true
   # -- optional map of annotations to be applied to the ui Pods
-  podAnnotations: {}
+  podAnnotations:
+    prometheus.io/scrape-slow: true
   # -- Optional labels to add to the UI pods
   podLabels: {}
   # -- SecurityContext to set on the server pods
@@ -446,7 +450,8 @@ server:
     annotations: {}
 
   # -- Annotations to be applied to the UI Service
-  serviceAnnotations: {}
+  serviceAnnotations:
+    prometheus.io/scrape-slow: true
   # -- Optional labels to add to the UI Service
   serviceLabels: {}
   # -- Static IP address to assign to loadBalancer service type `LoadBalancer`

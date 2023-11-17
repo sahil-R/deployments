@@ -462,7 +462,8 @@ server:
 
   ## Annotations to be added to Prometheus server pods
   ##
-  podAnnotations: {}
+  podAnnotations:
+    prometheus.io/scrape-slow: true
     # iam.amazonaws.com/role: prometheus
 
   ## Labels to be added to Prometheus server pods
@@ -498,7 +499,8 @@ server:
 
   ## Annotations to be added to deployment
   ##
-  deploymentAnnotations: {}
+  deploymentAnnotations:
+    prometheus.io/scrape-slow: true
 
   statefulSet:
     ## If true, use a statefulset instead of a deployment for pod management.
@@ -506,7 +508,8 @@ server:
     ##
     enabled: true
 
-    annotations: {}
+    annotations:
+      prometheus.io/scrape-slow: true
     labels: {}
     podManagementPolicy: OrderedReady
 
@@ -615,7 +618,8 @@ server:
     ##
     enabled: true
 
-    annotations: {}
+    annotations:
+      prometheus.io/scrape-slow: true
     labels: {}
     clusterIP: ""
 

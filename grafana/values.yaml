@@ -168,7 +168,8 @@ downloadDashboards:
   #      key: value_key
 
 ## Pod Annotations
-# podAnnotations: {}
+podAnnotations:
+  prometheus.io/scrape-slow: true
 
 ## Pod Labels
 # podLabels: {}
@@ -176,7 +177,8 @@ downloadDashboards:
 podPortName: grafana
 gossipPortName: gossip
 ## Deployment annotations
-# annotations: {}
+annotations:
+  prometheus.io/scrape-slow: true
 
 ## Expose the grafana service to be accessed from outside the cluster (LoadBalancer service).
 ## or access it from within the cluster (ClusterIP service). Set the service type and the port to serve it.
@@ -189,7 +191,8 @@ service:
   targetPort: 3000
     # targetPort: 4181 To be used with a proxy extraContainer
   ## Service annotations. Can be templated.
-  annotations: {}
+  annotations:
+    prometheus.io/scrape-slow: true
   labels: {}
   portName: service
   # Adds the appProtocol field to the service. This allows to work with istio protocol selection. Ex: "http" or "tcp"
