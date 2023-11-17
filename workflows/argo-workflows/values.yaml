@@ -147,7 +147,7 @@ controller:
   # # enable archiving of old workflows
     archive: true
     mysql:
-      host: mysql-primary.argocd.svc.cluster.local
+      host: mysql-primary.mysql.svc.cluster.local
       port: 3306
       database: my_database
       tableName: argo_workflows

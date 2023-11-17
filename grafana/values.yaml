@@ -723,7 +723,7 @@ dashboardsConfigMaps: {}
 grafana.ini:
   database:
     type: mysql
-    host: mysql-primary.argocd.svc.cluster.local
+    host: mysql-primary.mysql.svc.cluster.local
     user: root
     password: root
   paths:
