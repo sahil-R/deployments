@@ -1105,7 +1105,7 @@ metrics:
   ##
   service:
     type: ClusterIP
-    port: 9104
+    port: 3306
     clusterIP: ""
     annotations:
       prometheus.io/scrape: "true"
