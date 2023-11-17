@@ -185,7 +185,7 @@ controller:
   # as metrics by default, but can be overridden using this config.
   telemetryConfig:
     # -- Enables prometheus telemetry server
-    enabled: true 
+    enabled: false 
     # -- telemetry path
     path: /telemetry
     # -- telemetry container port
