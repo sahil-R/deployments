@@ -791,7 +791,7 @@ ldap:
 smtp:
   # `existingSecret` is a reference to an existing secret containing the smtp configuration
   # for Grafana.
-  existingSecret: ""
+  # existingSecret: ""
   userKey: "user"
   passwordKey: "password"
 
