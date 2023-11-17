@@ -455,6 +455,7 @@ server:
   serviceAnnotations:
     prometheus.io/scrape-slow: "true"
     prometheus.io/port: '8080'
+    prometheus.io/scheme: 'https'
   # -- Optional labels to add to the UI Service
   serviceLabels: {}
   # -- Static IP address to assign to loadBalancer service type `LoadBalancer`
