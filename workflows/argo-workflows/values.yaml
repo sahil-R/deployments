@@ -99,7 +99,7 @@ controller:
   podAnnotations:
     prometheus.io/scrape-slow: "true"
     prometheus.io/port: '2746'
-    prometheus.io/scheme: 'https'
+    # prometheus.io/scheme: 'https'
   # -- Optional labels to add to the controller pods
   podLabels: {}
   # -- SecurityContext to set on the controller pods
