@@ -389,7 +389,7 @@ adminUser: admin
 adminPassword: strongpassword
 
 # Use an existing secret for the admin user.
-admin:
+admin: {}
   # ## Name of the secret. Can be templated.
   # existingSecret: ""
   # # userKey: admin-user
