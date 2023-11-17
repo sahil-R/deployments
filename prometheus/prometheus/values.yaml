@@ -538,7 +538,7 @@ server:
   ## Ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
   ##
   tcpSocketProbeEnabled: false
-  probeScheme: HTTP
+  probeScheme: HTTPS
   readinessProbeInitialDelay: 30
   readinessProbePeriodSeconds: 5
   readinessProbeTimeout: 4
