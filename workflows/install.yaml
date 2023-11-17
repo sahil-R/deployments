@@ -1244,7 +1244,7 @@ metadata:
       #     passwordSecret:
       #       name: argo-postgres-config
       #       key: password
-      persistence: |
+      persistence:
         connectionPool:
           maxIdleConns: 100
           maxOpenConns: 0
@@ -1252,12 +1252,6 @@ metadata:
         nodeStatusOffLoad: false
         archive: true
         archiveTTL: 180d
-        clusterName: default
-          ssl: false
-          # sslMode must be one of: disable, require, verify-ca, verify-full
-          # you can find more information about those ssl options here: https://godoc.org/github.com/lib/pq
-          sslMode: disable
-
         # Optional config for mysql:
         mysql:
           host: mysql-primary.argocd.svc.cluster.local
@@ -1271,7 +1265,7 @@ metadata:
             name: argo-mysql-config
             key: password
 ---
-apiVersion: v1
+apiVersion: v1 
 kind: Service
 metadata:
   name: argo-server
