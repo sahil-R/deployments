@@ -245,7 +245,9 @@ primary:
   ## @param primary.podAnnotations Additional pod annotations for MySQL primary pods
   ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   ##
-  podAnnotations: {}
+  podAnnotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "{{ .Values.metrics.service.port }}"
   ## @param primary.podAffinityPreset MySQL primary pod affinity preset. Ignored if `primary.affinity` is set. Allowed values: `soft` or `hard`
   ## ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity
   ##
@@ -528,6 +530,8 @@ primary:
     ## @param primary.service.annotations Additional custom annotations for MySQL primary service
     ##
     annotations: {}
+        # prometheus.io/scrape-slow: "true"
+        # prometheus.io/port: "{{ .Values.metrics.service.port }}"
       # prometheus.io/scrape: "true"
       # prometheus.io/scheme: 'http'
     ## @param primary.service.sessionAffinity Session Affinity for Kubernetes service, can be "None" or "ClientIP"

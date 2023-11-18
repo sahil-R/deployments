@@ -296,7 +296,7 @@ controller:
       selector: {}
         # prometheus: kube-prometheus
       # -- Prometheus ServiceMonitor namespace
-      namespace: "" # "monitoring"
+      namespace: "prometheus" # "monitoring"
       # -- Prometheus ServiceMonitor labels
       additionalLabels: {}
 
