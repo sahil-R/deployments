@@ -247,7 +247,7 @@ primary:
   ##
   podAnnotations:
       prometheus.io/scrape: "true"
-      prometheus.io/port: "{{ .Values.metrics.service.port }}"
+      # prometheus.io/port: "{{ .Values.metrics.service.port }}"
   ## @param primary.podAffinityPreset MySQL primary pod affinity preset. Ignored if `primary.affinity` is set. Allowed values: `soft` or `hard`
   ## ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity
   ##
@@ -637,8 +637,8 @@ secondary:
   ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   ##
   podAnnotations:
-    prometheus.io/scrape: "true"
-    prometheus.io/port: "{{ .Values.metrics.service.port }}"
+    prometheus.io/scrape-slow: "true"
+    # prometheus.io/port: "{{ .Values.metrics.service.port }}"
   ## @param secondary.podAffinityPreset MySQL secondary pod affinity preset. Ignored if `secondary.affinity` is set. Allowed values: `soft` or `hard`
   ## ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity
   ##
