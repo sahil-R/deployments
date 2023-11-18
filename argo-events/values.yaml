@@ -182,7 +182,8 @@ controller:
   #     name: secret-name
 
   # -- Annotations to be added to events controller pods
-  podAnnotations: {}
+  podAnnotations:
+    prometheus.io/scrape: "true"
 
   # -- Labels to be added to events controller pods
   podLabels: {}
