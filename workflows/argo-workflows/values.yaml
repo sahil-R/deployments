@@ -111,7 +111,7 @@ controller:
     # -- Path is the path where metrics are emitted. Must start with a "/".
     path: /metrics
     # -- Port is the port where metrics are emitted
-    port: 2746
+    port: 9090
     # -- How often custom metrics are cleared from memory
     metricsTTL: ""
     # -- Flag that instructs prometheus to ignore metric emission errors.
@@ -455,8 +455,8 @@ server:
   # -- Annotations to be applied to the UI Service
   serviceAnnotations:
     prometheus.io/scrape: "true"
-    # prometheus.io/port: '8080'
-    prometheus.io/scheme: 'https'
+    prometheus.io/port: '8080'
+    prometheus.io/scheme: 'http'
   # -- Optional labels to add to the UI Service
   serviceLabels: {}
   # -- Static IP address to assign to loadBalancer service type `LoadBalancer`
