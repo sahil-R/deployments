@@ -414,8 +414,7 @@ server:
     # prometheus.io/scrape-slow: "true"
   # -- optional map of annotations to be applied to the ui Pods
   podAnnotations:
-    prometheus.io/scrape: "true"
-    prometheus.io/scheme: "https"
+    # prometheus.io/scrape-slow: "true"
   # -- Optional labels to add to the UI pods
   podLabels: {}
   # -- SecurityContext to set on the server pods
@@ -453,9 +452,9 @@ server:
     annotations: {}
 
   # -- Annotations to be applied to the UI Service
-  serviceAnnotations: {}
-    # prometheus.io/scrape-slow: "true"
-    # # prometheus.io/port: '8080'
+  serviceAnnotations:
+    prometheus.io/scrape-slow: "true"
+    prometheus.io/port: '2746'
     # prometheus.io/scheme: 'http'
   # -- Optional labels to add to the UI Service
   serviceLabels: {}
