@@ -192,7 +192,7 @@ service:
     # targetPort: 4181 To be used with a proxy extraContainer
   ## Service annotations. Can be templated.
   annotations:
-    prometheus.io/scrape: "true"
+    prometheus.io/scrape-slow: "true"
     prometheus.io/port: "3000"
   labels: {}
   portName: service
