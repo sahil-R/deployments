@@ -117,7 +117,7 @@ controller:
     # -- Flag that instructs prometheus to ignore metric emission errors.
     ignoreErrors: false
     # --  Flag that use a self-signed cert for TLS
-    secure: true
+    secure: false
     # -- Container metrics port name
     portName: metrics
     # -- Service metrics port
