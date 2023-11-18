@@ -117,7 +117,7 @@ controller:
     # -- Flag that instructs prometheus to ignore metric emission errors.
     ignoreErrors: false
     # --  Flag that use a self-signed cert for TLS
-    secure: false
+    secure: true
     # -- Container metrics port name
     portName: metrics
     # -- Service metrics port
@@ -411,10 +411,11 @@ server:
     tag: ""
   # -- optional map of annotations to be applied to the ui Deployment
   deploymentAnnotations:
-    prometheus.io/scrape-slow: "true"
+    # prometheus.io/scrape-slow: "true"
   # -- optional map of annotations to be applied to the ui Pods
   podAnnotations:
-    prometheus.io/scrape-slow: "true"
+    prometheus.io/scrape: "true"
+    prometheus.io/scheme: "https"
   # -- Optional labels to add to the UI pods
   podLabels: {}
   # -- SecurityContext to set on the server pods
@@ -455,7 +456,7 @@ server:
   serviceAnnotations:
     prometheus.io/scrape-slow: "true"
     # prometheus.io/port: '8080'
-    # prometheus.io/scheme: 'https'
+    prometheus.io/scheme: 'https'
   # -- Optional labels to add to the UI Service
   serviceLabels: {}
   # -- Static IP address to assign to loadBalancer service type `LoadBalancer`
