@@ -1174,7 +1174,6 @@ metrics:
       - --collect.info_schema.processlist
       - --collect.info_schema.query_response_time
       - --collect.info_schema.tables
-      - --collect.info_schema.tables.databases
       - --collect.info_schema.tablestats
       - --collect.info_schema.userstats
       - --collect.perf_schema.eventsstatements
@@ -1208,7 +1207,6 @@ metrics:
       - --collect.info_schema.processlist
       - --collect.info_schema.query_response_time
       - --collect.info_schema.tables
-      - --collect.info_schema.tables.databases
       - --collect.info_schema.tablestats
       - --collect.info_schema.userstats
       - --collect.perf_schema.eventsstatements
