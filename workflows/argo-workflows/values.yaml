@@ -98,7 +98,7 @@ controller:
   # -- podAnnotations is an optional map of annotations to be applied to the controller Pods
   podAnnotations:
     prometheus.io/scrape-slow: "true"
-    prometheus.io/port: '9090'
+    prometheus.io/port: '8080'
     prometheus.io/scheme: 'http'
   # -- Optional labels to add to the controller pods
   podLabels: {}
@@ -111,7 +111,7 @@ controller:
     # -- Path is the path where metrics are emitted. Must start with a "/".
     path: /metrics
     # -- Port is the port where metrics are emitted
-    port: 9090
+    port: 2746
     # -- How often custom metrics are cleared from memory
     metricsTTL: ""
     # -- Flag that instructs prometheus to ignore metric emission errors.
