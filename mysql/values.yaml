@@ -1172,7 +1172,6 @@ metrics:
       - --collect.info_schema.innodb_cmp
       - --collect.info_schema.innodb_cmpmem
       - --collect.info_schema.processlist
-      - --collect.info_schema.processlist.min_time
       - --collect.info_schema.query_response_time
       - --collect.info_schema.tables
       - --collect.info_schema.tables.databases
@@ -1207,7 +1206,6 @@ metrics:
       - --collect.info_schema.innodb_cmp
       - --collect.info_schema.innodb_cmpmem
       - --collect.info_schema.processlist
-      - --collect.info_schema.processlist.min_time
       - --collect.info_schema.query_response_time
       - --collect.info_schema.tables
       - --collect.info_schema.tables.databases
