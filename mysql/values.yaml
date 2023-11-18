@@ -1177,7 +1177,6 @@ metrics:
       - --collect.info_schema.tablestats
       - --collect.info_schema.userstats
       - --collect.perf_schema.eventsstatements
-      - --collect.perf_schema.eventsstatements.digest_text_limit
       - --collect.perf_schema.eventsstatements.limit
       - --collect.perf_schema.eventsstatements.timelimit
       - --collect.perf_schema.eventswaits
@@ -1210,7 +1209,6 @@ metrics:
       - --collect.info_schema.tablestats
       - --collect.info_schema.userstats
       - --collect.perf_schema.eventsstatements
-      - --collect.perf_schema.eventsstatements.digest_text_limit
       - --collect.perf_schema.eventsstatements.limit
       - --collect.perf_schema.eventsstatements.timelimit
       - --collect.perf_schema.eventswaits
