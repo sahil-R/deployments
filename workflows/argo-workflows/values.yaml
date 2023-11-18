@@ -98,8 +98,8 @@ controller:
   # -- podAnnotations is an optional map of annotations to be applied to the controller Pods
   podAnnotations:
     prometheus.io/scrape-slow: "true"
-    prometheus.io/port: '2746'
-    prometheus.io/scheme: 'https'
+    prometheus.io/port: '8080'
+    prometheus.io/scheme: 'metrics'
   # -- Optional labels to add to the controller pods
   podLabels: {}
   # -- SecurityContext to set on the controller pods
@@ -107,7 +107,7 @@ controller:
   # podPortName: http
   metricsConfig:
     # -- Enables prometheus metrics server
-    enabled: true
+    enabled: false
     # -- Path is the path where metrics are emitted. Must start with a "/".
     path: /metrics
     # -- Port is the port where metrics are emitted
