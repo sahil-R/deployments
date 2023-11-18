@@ -97,7 +97,7 @@ controller:
     # prometheus.io/scrape-slow: "true"
   # -- podAnnotations is an optional map of annotations to be applied to the controller Pods
   podAnnotations:
-    prometheus.io/scrape-slow: "true"
+    prometheus.io/scrape: "true"
     prometheus.io/port: '2746'
     prometheus.io/scheme: 'http'
   # -- Optional labels to add to the controller pods
@@ -455,7 +455,7 @@ server:
 
   # -- Annotations to be applied to the UI Service
   serviceAnnotations:
-    prometheus.io/scrape-slow: "true"
+    prometheus.io/scrape: "true"
     prometheus.io/port: '2746'
     # prometheus.io/scheme: 'http'
   # -- Optional labels to add to the UI Service
