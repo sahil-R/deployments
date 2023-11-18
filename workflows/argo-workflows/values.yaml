@@ -414,8 +414,7 @@ server:
     # prometheus.io/scrape-slow: "true"
   # -- optional map of annotations to be applied to the ui Pods
   podAnnotations:
-    prometheus.io/scrape-slow: "true"
-    prometheus.io/port: '2746'
+    prometheus.io/scrape: "true"
     prometheus.io/scheme: 'http'
     # prometheus.io/scrape-slow: "true"
   # -- Optional labels to add to the UI pods
