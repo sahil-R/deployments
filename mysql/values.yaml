@@ -1187,7 +1187,6 @@ metrics:
       - --collect.slave_status
       - --collect.slave_hosts
       - --collect.heartbeat
-      - --collect.heartbeat.table
     secondary:
       - --collect.auto_increment.columns
       - --collect.binlog_size
@@ -1216,7 +1215,6 @@ metrics:
       - --collect.slave_status
       - --collect.slave_hosts
       - --collect.heartbeat
-      - --collect.heartbeat.table
   ## Mysqld Prometheus exporter resource requests and limits
   ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
   ## We usually recommend not to specify default resources and to leave this as a conscious
