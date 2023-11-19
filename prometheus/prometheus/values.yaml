@@ -147,7 +147,7 @@ server:
 
   ## prometheus server priorityClassName
   ##
-  priorityClassName: "system-node-critical"
+  priorityClassName: "high-priority"
 
   ## EnableServiceLinks indicates whether information about services should be injected
   ## into pod's environment variables, matching the syntax of Docker links.
@@ -1192,7 +1192,7 @@ prometheus-node-exporter:
   containerSecurityContext:
     allowPrivilegeEscalation: false
 
-  priorityClassName: "system-node-critical"
+  priorityClassName: "high-priority"
 
 ## pprometheus-pushgateway sub-chart configurable values
 ## Please see https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus-pushgateway
