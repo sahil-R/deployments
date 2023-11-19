@@ -309,7 +309,7 @@ controller:
 
   # -- Leverage a PriorityClass to ensure your pods survive resource shortages.
   ## ref: https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/
-  priorityClassName: "high-priority"
+  priorityClassName: ""
 
   # -- Configure Argo Server to show custom [links]
   ## Ref: https://argoproj.github.io/argo-workflows/links/
@@ -520,7 +520,7 @@ server:
 
   # -- Leverage a PriorityClass to ensure your pods survive resource shortages
   ## ref: https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/
-  priorityClassName: "high-priority"
+  priorityClassName: ""
 
   # -- Run the argo server in "secure" mode. Configure this value instead of `--secure` in extraArgs.
   ## See the following documentation for more details on secure mode:
