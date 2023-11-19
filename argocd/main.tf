@@ -67,19 +67,19 @@ provider "google" {
 # #     manifest = kubernetes_manifest.argocd-configmap-namespace
 # # }
 
-resource "kubernetes_namespace" "argocd" {  
-  metadata {
-    name = "argocd"
-  }
-}
+# resource "kubernetes_namespace" "argocd" {  
+#   metadata {
+#     name = "argocd"
+#   }
+# }
 
 resource "helm_release" "argocd-server" {
   name = "argocd-server"
   repository = "https://argoproj.github.io/argo-helm"
   chart      = "argo-cd"
   version    = "5.24.1"
-  namespace  = kubernetes_namespace.argocd.metadata.0.name
-  depends_on = [
-    kubernetes_namespace.argocd
-  ]
+  namespace  = "argocd"
+  # depends_on = [
+  #   kubernetes_namespace.argocd
+  # ]
 }

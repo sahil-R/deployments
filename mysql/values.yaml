@@ -41,7 +41,7 @@ clusterDomain: cluster.local
 ## @param commonAnnotations Common annotations to add to all MySQL resources (sub-charts are not considered). Evaluated as a template
 ##
 commonAnnotations:
-  prometheus.io/scrape: "true"
+  prometheus.io/scrape-slow: "true"
   prometheus.io/port: "{{ .Values.metrics.service.port }}"
 ## @param commonLabels Common labels to add to all MySQL resources (sub-charts are not considered). Evaluated as a template
 ##
@@ -246,7 +246,7 @@ primary:
   ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   ##
   podAnnotations:
-      prometheus.io/scrape: "true"
+      prometheus.io/scrape-slow: "true"
       # prometheus.io/port: "{{ .Values.metrics.service.port }}"
   ## @param primary.podAffinityPreset MySQL primary pod affinity preset. Ignored if `primary.affinity` is set. Allowed values: `soft` or `hard`
   ## ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity
@@ -529,8 +529,8 @@ primary:
     extraPorts: []
     ## @param primary.service.annotations Additional custom annotations for MySQL primary service
     ##
-    annotations: {}
-        # prometheus.io/scrape-slow: "true"
+    annotations:
+        prometheus.io/scrape-slow: "true"
         # prometheus.io/port: "{{ .Values.metrics.service.port }}"
       # prometheus.io/scrape: "true"
       # prometheus.io/scheme: 'http'
@@ -637,7 +637,7 @@ secondary:
   ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   ##
   podAnnotations:
-    prometheus.io/scrape: "true"
+    prometheus.io/scrape-slow: "true"
     # prometheus.io/port: "{{ .Values.metrics.service.port }}"
   ## @param secondary.podAffinityPreset MySQL secondary pod affinity preset. Ignored if `secondary.affinity` is set. Allowed values: `soft` or `hard`
   ## ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity
@@ -1117,7 +1117,7 @@ metrics:
     port: 9104
     clusterIP: ""
     annotations:
-      prometheus.io/scrape: "true"
+      prometheus.io/scrape-slow: "true"
       prometheus.io/port: "{{ .Values.metrics.service.port }}"
   ## @param metrics.extraArgs.primary Extra args to be passed to mysqld_exporter on Primary pods
   ## @param metrics.extraArgs.secondary Extra args to be passed to mysqld_exporter on Secondary pods
@@ -1315,7 +1315,7 @@ metrics:
     ## @param metrics.serviceMonitor.annotations ServiceMonitor annotations
     ##
     annotations:
-      prometheus.io/scrape: "true"
+      prometheus.io/scrape-slow: "true"
 
   ## Prometheus Operator prometheusRule configuration
   ##
