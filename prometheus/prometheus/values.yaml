@@ -661,18 +661,18 @@ ruleFiles: {}
 serverFiles:
   ## Alerts configuration
   ## Ref: https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/
-  alerting_rules.yml: {}
-  # groups:
-  #   - name: Instances
-  #     rules:
-  #       - alert: InstanceDown
-  #         expr: up == 0
-  #         for: 5m
-  #         labels:
-  #           severity: page
-  #         annotations:
-  #           description: '{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 5 minutes.'
-  #           summary: 'Instance {{ $labels.instance }} down'
+  alerting_rules.yml:
+  groups:
+    - name: Service
+      rules:
+        - alert: InstanceDown
+          expr: count(up==1 and {job="workflows"}) < 1
+          for: 1m
+          labels:
+            severity: slack-notifications
+          annotations:
+            description: '{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 5 minutes.'
+            summary: 'Instance {{ $labels.instance }} down'
   ## DEPRECATED DEFAULT VALUE, unless explicitly naming your files, please use alerting_rules.yml
   alerts: {}
 
@@ -1197,6 +1197,20 @@ alertmanager:
   ## If false, alertmanager will not be installed
   ##
   enabled: true
+  config:
+    global:
+      resolve_timeout: 5m
+      slack_api_url: 'https://api.flock.com/hooks/sendMessage/3d1c7641-13bc-4b8c-acaa-0c37e886c9b4'
+    route:
+      receiver: 'slack-notifications'
+      repeat_interval: 1s
+    receivers:
+      - name: 'slack-notifications'
+        slack_configs:
+        - channel: 'test-sahil.ra'
+          send_resolved: true
+          title: "{{ range .Alerts }}{{ .Annotations.summary }}\n{{ end }}"
+          text: "{{ range .Alerts }}{{ .Annotations.description }}\n{{ end }}"  
 
   persistence:
     size: 2Gi
