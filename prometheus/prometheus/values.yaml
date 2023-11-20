@@ -712,9 +712,6 @@ serverFiles:
         - source_labels: [__meta_kubernetes_endpoints_name]
           regex: 'grafana'
           action: keep
-        - source_labels: [__meta_kubernetes_endpoint_port_name]
-          regex: 'metrics'
-          action: keep
       - job_name: 'mysql'
         kubernetes_sd_configs:
           - role: endpoints
@@ -731,9 +728,6 @@ serverFiles:
         relabel_configs:
         - source_labels: [__meta_kubernetes_endpoints_name]
           regex: 'workflows-argo-workflows-server'
-          action: keep
-        - source_labels: [__meta_kubernetes_endpoint_port_name]
-          regex: 'metrics'
           action: keep
         
 
