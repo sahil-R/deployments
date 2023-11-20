@@ -707,27 +707,27 @@ serverFiles:
           action: keep
       - job_name: 'grafana'
         kubernetes_sd_configs:
-          - role: endpoints
+          - role: service
         relabel_configs:
-        - source_labels: [__meta_kubernetes_endpoints_name]
+        - source_labels: [__meta_kubernetes_service_name]
           regex: 'grafana'
           action: keep
-        - source_labels: [__meta_kubernetes_endpoint_port_name]
-          regex: 'service'
-          action: keep
+        # - source_labels: [__meta_kubernetes_endpoint_port_name]
+        #   regex: 'service'
+        #   action: keep
       - job_name: 'mysql'
         kubernetes_sd_configs:
-          - role: endpoints
+          - role: service
         relabel_configs:
-        - source_labels: [__meta_kubernetes_endpoints_name]
-          regex: 'mysql-metrics'
+        - source_labels: [__meta_kubernetes_service_name]
+          regex: 'mysql-*'
           action: keep
-        - source_labels: [__meta_kubernetes_endpoint_port_name]
-          regex: 'metrics'
-          action: keep
+        # - source_labels: [__meta_kubernetes_endpoint_port_name]
+        #   regex: 'metrics'
+        #   action: keep
       - job_name: 'workflows'
         kubernetes_sd_configs:
-          - role: endpoints
+          - role: service
         relabel_configs:
         - source_labels: [__meta_kubernetes_endpoints_name]
           regex: 'workflows-argo-workflows-server'
