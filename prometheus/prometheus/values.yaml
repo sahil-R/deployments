@@ -712,8 +712,8 @@ serverFiles:
         - source_labels: [__meta_kubernetes_endpoints_name]
           regex: 'grafana'
           action: keep
-        - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_port]
-          regex: '3000'
+        - source_labels: [__meta_kubernetes_endpoint_port_name]
+          regex: 'service'
           action: keep
       - job_name: 'mysql'
         kubernetes_sd_configs:
