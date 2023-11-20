@@ -168,10 +168,10 @@ downloadDashboards:
   #      key: value_key
 
 ## Pod Annotations
-podAnnotations:
-  prometheus.io/scrape-slow: "true"
-  prometheus.io/scheme: "https"
-  prometheus.io/port: "3000"
+podAnnotations: {}
+  # prometheus.io/scrape-slow: "true"
+  # prometheus.io/scheme: "https"
+  # prometheus.io/port: "3000"
 ## Pod Labels
 # podLabels: {}
 
@@ -192,10 +192,10 @@ service:
   targetPort: 3000
     # targetPort: 4181 To be used with a proxy extraContainer
   ## Service annotations. Can be templated.
-  annotations:
-    prometheus.io/scrape-slow: "true"
-    prometheus.io/scheme: "https"
-    prometheus.io/port: "3000"
+  annotations: {}
+    # prometheus.io/scrape-slow: "true"
+    # prometheus.io/scheme: "https"
+    # prometheus.io/port: "3000"
   labels: {}
   portName: service
   # Adds the appProtocol field to the service. This allows to work with istio protocol selection. Ex: "http" or "tcp"
