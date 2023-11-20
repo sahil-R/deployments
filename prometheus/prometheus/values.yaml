@@ -700,7 +700,7 @@ serverFiles:
           - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
       - job_name: 'node_exporter'
         static_configs:
-          - targets: ['prometheus-prometheus-node-exporter.svc.cluster.local:9100']
+          - targets: ['prometheus-prometheus-node-exporter.prometheus.svc.cluster.local:9100']
 
       # A scrape configuration for running Prometheus on a Kubernetes cluster.
       # This uses separate scrape configs for cluster components (i.e. API server, node)
