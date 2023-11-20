@@ -719,9 +719,9 @@ serverFiles:
         - source_labels: [__meta_kubernetes_endpoints_name]
           regex: 'mysql-metrics'
           action: keep
-        # - source_labels: [__meta_kubernetes_pod_container_port_number]
-        #   regex: '9100'
-        #   action: keep
+        - source_labels: [__meta_kubernetes_endpoint_port_name]
+          regex: 'metrics'
+          action: keep
         
 
 
