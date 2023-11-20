@@ -1200,12 +1200,6 @@ prometheus-node-exporter:
 
   containerSecurityContext:
     allowPrivilegeEscalation: false
-  prometheus:
-    monitor:
-      enabled: true
-      relabelings:
-        - sourceLabels: [__meta_kubernetes_endpoint_node_name]
-          targetLabel: node
 
 
 ## pprometheus-pushgateway sub-chart configurable values
