@@ -697,7 +697,7 @@ serverFiles:
             - localhost:9090
       - job_name: 'kube-state-metrics'
         static_configs:
-          - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
+          - targets: ['prometheus-kube-state-metrics.prometheus.svc.cluster.local:8080']
       - job_name: 'node_exporter'
         static_configs:
           - targets: ['prometheus-prometheus-node-exporter.prometheus.svc.cluster.local:9100']
@@ -1127,6 +1127,7 @@ extraScrapeConfigs: ""
   #     - target_label: __address__
   #       replacement: prometheus-blackbox-exporter:9115
 
+
 # Adds option to add alert_relabel_configs to avoid duplicate alerts in alertmanager
 # useful in H/A prometheus with different external labels but the same alerts
 alertRelabelConfigs: {}
@@ -1194,6 +1195,12 @@ prometheus-node-exporter:
 
   containerSecurityContext:
     allowPrivilegeEscalation: false
+  prometheus:
+    monitor:
+      enabled: true
+      relabelings:
+        - sourceLabels: [__meta_kubernetes_endpoint_node_name]
+          targetLabel: node
 
 
 ## pprometheus-pushgateway sub-chart configurable values
