@@ -720,7 +720,7 @@ serverFiles:
           - role: service
         relabel_configs:
         - source_labels: [__meta_kubernetes_service_name]
-          regex: mysql-*
+          regex: mysql-primary|mysql-secondary|mysql-metrics
           action: keep
         # - source_labels: [__meta_kubernetes_endpoint_port_name]
         #   regex: 'metrics'
