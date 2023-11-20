@@ -462,8 +462,8 @@ server:
 
   ## Annotations to be added to Prometheus server pods
   ##
-  podAnnotations:
-    prometheus.io/scrape-slow: "true"
+  podAnnotations: {}
+    # prometheus.io/scrape-slow: "true"
     # iam.amazonaws.com/role: prometheus
 
   ## Labels to be added to Prometheus server pods
@@ -616,8 +616,8 @@ server:
     ##
     enabled: true
 
-    annotations:
-      prometheus.io/scrape-slow: "true"
+    annotations: {}
+      # prometheus.io/scrape-slow: "true"
     labels: {}
     clusterIP: ""
 
