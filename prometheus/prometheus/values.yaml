@@ -666,7 +666,7 @@ serverFiles:
       - name: Service
         rules:
           - alert: InstanceDown
-            expr: count(up==1 and {job="workflows"}) == 1
+            expr: count(up==1 and {job="workflows"}) == 0
             for: 1m
             labels:
               severity: slack-notifications
