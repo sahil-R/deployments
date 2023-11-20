@@ -720,8 +720,9 @@ serverFiles:
           regex: 'mysql-metrics'
           action: keep
         - source_labels: [__meta_kubernetes_pod_container_port_number]
-        action: keep
-        regex: '9100'
+          regex: '9100'
+          action: keep
+        
 
 
       # A scrape configuration for running Prometheus on a Kubernetes cluster.
