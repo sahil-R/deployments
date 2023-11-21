@@ -673,6 +673,15 @@ serverFiles:
             annotations:
               description: '{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 5 minutes.'
               summary: 'Instance {{ $labels.instance }} down'
+          - alert: MysqlDown
+            expr: count(up==1 and {job="mysql"}) <2
+            for: 1m
+            labels:
+              severity: slack-notifications
+            annotations:
+              description: '{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 5 minutes.'
+              summary: 'Instance {{ $labels.instance }} down'
+      
   ## DEPRECATED DEFAULT VALUE, unless explicitly naming your files, please use alerting_rules.yml
   alerts: {}
 
